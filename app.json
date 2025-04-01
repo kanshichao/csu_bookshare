@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/auth/login/index",
+    "pages/auth/reset-password/index",
+    "pages/books/list/index",
+    "pages/books/detail/index",
+    "pages/books/add/index",
+    "pages/borrow/list/index",
+    "pages/borrow/history/index",
+    "pages/profile/index/index",
+    "pages/profile/change-password/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "寝室图书共享",
+    "navigationBarBackgroundColor": "#2d8cf0",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f7fa",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#2d8cf0",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/books/list/index",
+        "text": "图书",
+        "iconPath": "assets/icons/book.png",
+        "selectedIconPath": "assets/icons/book-active.png"
+      },
+      {
+        "pagePath": "pages/borrow/list/index",
+        "text": "借阅",
+        "iconPath": "assets/icons/borrow.png",
+        "selectedIconPath": "assets/icons/borrow-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index/index",
+        "text": "我的",
+        "iconPath": "assets/icons/profile.png",
+        "selectedIconPath": "assets/icons/profile-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "book-card": "/components/book-card/index",
+    "loading": "/components/loading/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
