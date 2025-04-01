@@ -25,9 +25,9 @@
   "envParams": {},
   "customLogs": "stdout",
   "initialDelaySeconds": 2,
-  "dataBaseName": "nodejs_demo",
+  "dataBaseName": "book_manage",
   "executeSQLs": [
-    "CREATE DATABASE IF NOT EXISTS nodejs_demo;",
-    "USE nodejs_demo;"
+    "CREATE DATABASE IF NOT EXISTS book_manage;",
+    "USE book_manage;"
   ]
 }
