@@ -1,0 +1,20 @@
+<!-- components/book-card/index.wxml -->
+<view class="book-card" bindtap="handleTap">
+  <view class="cover-container">
+    <image 
+      src="{{book.cover || '/assets/images/default-book.png'}}" 
+      mode="aspectFill"
+      class="cover"
+    ></image>
+    <view class="status" wx:if="{{book.status === 'borrowed'}}">借出中</view>
+  </view>
+  
+  <view class="info">
+    <text class="title">{{book.title}}</text>
+    <text class="author">{{book.author}}</text>
+    <view class="meta">
+      <text class="category">{{book.main_category}}</text>
+      <text class="dormitory">{{book.dormitory}}</text>
+    </view>
+  </view>
+</view>
