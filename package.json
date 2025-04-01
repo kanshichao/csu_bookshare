@@ -21,6 +21,14 @@
   ],
   "author": "Your Name <your.email@example.com>",
   "license": "MIT",
+   "dependencies": {
+    "weui-csu_bookshare": "^1.2.3",
+    "dayjs": "^1.11.5",
+    "csu_bookshare-api-typings": "^3.6.0",
+    "csu_bookshare-computed": "^4.1.1",
+    "csu_bookshare-recycle-view": "^0.1.5",
+    "wechat-csu_bookshare-request": "^1.0.0"
+  },
   "devDependencies": {
     "cross-env": "^7.0.3",
     "eslint": "^8.11.0",
