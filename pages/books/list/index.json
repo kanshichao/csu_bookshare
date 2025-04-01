@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "图书列表",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "book-card": "/components/book-card/index",
+    "loading": "/components/loading/index"
+  }
+}
