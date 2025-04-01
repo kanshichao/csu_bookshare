@@ -1,0 +1,42 @@
+<!-- pages/auth/login/index.wxml -->
+<view class="login-container">
+  <view class="login-header">
+    <image src="/assets/images/logo.png" mode="aspectFit"></image>
+    <text class="title">寝室图书共享系统</text>
+    <text class="subtitle">用知识连接每个寝室</text>
+  </view>
+  
+  <view class="login-form">
+    <view class="form-item">
+      <text class="label">学号</text>
+      <input 
+        type="text" 
+        placeholder="请输入学号" 
+        data-field="studentId"
+        bindinput="handleInputChange"
+        value="{{studentId}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">密码</text>
+      <input 
+        type="password" 
+        placeholder="请输入密码" 
+        data-field="password"
+        bindinput="handleInputChange"
+        value="{{password}}"
+      />
+    </view>
+    
+    <button 
+      class="login-btn" 
+      bindtap="handleLogin"
+      loading="{{loading}}"
+    >登录</button>
+    
+    <view class="login-footer">
+      <text bindtap="navigateToReset">忘记密码？</text>
+    </view>
+  </view>
+</view>
