@@ -1,0 +1,52 @@
+<!-- pages/borrow/list/index.wxml -->
+<view class="borrow-list-container">
+  <!-- 选项卡 -->
+  <view class="tabs">
+    <block wx:for="{{tabs}}" wx:key="value">
+      <view 
+        class="tab {{activeTab === item.value ? 'active' : ''}}"
+        bindtap="onTabChange"
+        data-value="{{item.value}}"
+      >
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+  
+  <!-- 借阅列表 -->
+  <scroll-view scroll-y class="borrow-list">
+    <block wx:for="{{borrows}}" wx:key="_id">
+      <view 
+        class="borrow-item"
+        bindtap="navigateToDetail"
+        data-id="{{item.book_id}}"
+      >
+        <image 
+          src="{{item.book_cover || '/assets/images/default-book.png'}}" 
+          mode="aspectFill"
+          class="cover"
+        ></image>
+        
+        <view class="info">
+          <text class="title">{{item.book_title}}</text>
+          <text class="meta">
+            <text wx:if="{{activeTab === 'current'}}">应还: {{item.due_time}}</text>
+            <text wx:else>归还: {{item.return_time}}</text>
+          </text>
+          <text class="dormitory">{{item.dormitory}}</text>
+        </view>
+        
+        <view class="status {{activeTab === 'current' ? 'current' : 'history'}}">
+          {{activeTab === 'current' ? '借阅中' : '已归还'}}
+        </view>
+      </view>
+    </block>
+    
+    <view wx:if="{{borrows.length === 0 && !loading}}" class="empty">
+      <image src="/assets/images/empty-borrow.png" mode="aspectFit"></image>
+      <text>{{activeTab === 'current' ? '暂无当前借阅' : '暂无历史借阅'}}</text>
+    </view>
+  </scroll-view>
+  
+  <loading wx:if="{{loading}}"></loading>
+</view>
