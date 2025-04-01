@@ -44,10 +44,10 @@ FROM node:16-alpine
 WORKDIR /app
 
 # 复制云函数
-COPY --from=builder /app/cloud/functions ./functions
+COPY --from=builder /app/cloud/functions/mysql ./mysql
 
 # 安装云函数依赖
-RUN find ./functions -name "package.json" -execdir npm install \;
+RUN find ./mysql -name "package.json" -execdir npm install \;
 
 # 安装全局依赖
 RUN npm install -g serve
