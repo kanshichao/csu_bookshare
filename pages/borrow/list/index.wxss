@@ -1,0 +1,51 @@
+/* pages/borrow/list/index.wxss */
+@import "../../styles/theme.wxss";
+
+.borrow-list-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f7fa;
+}
+
+.tabs {
+  display: flex;
+  background: #fff;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 25rpx 0;
+  font-size: 30rpx;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.tab.active {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80rpx;
+  height: 6rpx;
+  background: var(--primary-color);
+  border-radius: 3rpx;
+}
+
+.borrow-list {
+  flex: 1;
+  padding: 20rpx;
+}
+
+.borrow-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 
