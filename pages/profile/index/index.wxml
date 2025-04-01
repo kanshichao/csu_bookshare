@@ -1,0 +1,41 @@
+<!-- pages/profile/index/index.wxml -->
+<view class="profile-container">
+  <view class="user-card">
+    <image 
+      src="{{userInfo.avatar || '/assets/images/default-avatar.png'}}" 
+      class="avatar"
+    ></image>
+    <view class="info">
+      <text class="name">{{userInfo.name || '未设置昵称'}}</text>
+      <text class="dormitory">{{userInfo.dormitory || '未设置寝室'}}</text>
+    </view>
+  </view>
+  
+  <view class="stats">
+    <view class="stat-item" bindtap="navigateTo" data-url="/pages/books/list">
+      <text class="value">{{stats.bookCount}}</text>
+      <text class="label">我的藏书</text>
+    </view>
+    <view class="stat-item" bindtap="navigateTo" data-url="/pages/borrow/list">
+      <text class="value">{{stats.borrowCount}}</text>
+      <text class="label">当前借阅</text>
+    </view>
+    <view class="stat-item" bindtap="navigateTo" data-url="/pages/borrow/history">
+      <text class="value">{{stats.historyCount}}</text>
+      <text class="label">历史借阅</text>
+    </view>
+  </view>
+  
+  <view class="menu-list">
+    <view class="menu-item" bindtap="navigateTo" data-url="/pages/profile/change-password/index">
+      <image src="/assets/icons/password.png" class="icon"></image>
+      <text>修改密码</text>
+      <icon type="arrow-right" size="16" color="#ccc"></icon>
+    </view>
+    <view class="menu-item" bindtap="logout">
+      <image src="/assets/icons/logout.png" class="icon"></image>
+      <text>退出登录</text>
+      <icon type="arrow-right" size="16" color="#ccc"></icon>
+    </view>
+  </view>
+</view>
