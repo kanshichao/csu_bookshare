@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "借阅历史",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "loading": "/components/loading/index"
+  }
+}
