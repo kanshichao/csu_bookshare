@@ -41,7 +41,6 @@
     "miniprogram-ci": "^1.8.0",
     "miniprogram-simulate": "^1.5.0",
     "postcss": "^8.4.12",
-    "postcss-pxtransform": "^3.8.0",
     "through2": "^4.0.2"
   },
   "miniprogram": "csu_bookshare"
