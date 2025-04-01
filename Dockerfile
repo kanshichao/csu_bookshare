@@ -18,10 +18,6 @@ RUN npm config set registry https://registry.npmmirror.com && \
     npm config set electron_mirror https://npmmirror.com/mirrors/electron/ && \
     npm config set puppeteer_download_host https://npmmirror.com/mirrors
 
-RUN npm config set registry https://registry.npm.weixin.qq.com/
-
-RUN npm install miniprogram-ci --save-dev
-
 # 复制 package.json 和 package-lock.json
 COPY package*.json ./
 
