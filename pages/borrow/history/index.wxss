@@ -1,0 +1,117 @@
+/* pages/borrow/history/index.wxss */
+@import "../../styles/theme.wxss";
+
+.history-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f7fa;
+}
+
+.header {
+  padding: 30rpx;
+  background: #fff;
+  border-bottom: 1rpx solid var(--border-color);
+}
+
+.header .title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.header .count {
+  display: block;
+  font-size: 26rpx;
+  color: var(--text-secondary);
+  margin-top: 10rpx;
+}
+
+.history-list {
+  flex: 1;
+  padding: 20rpx;
+}
+
+.history-item {
+  display: flex;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 25rpx;
+  margin-bottom: 20rpx;
+}
+
+.history-item .cover {
+  width: 120rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  margin-right: 25rpx;
+  flex-shrink: 0;
+}
+
+.history-item .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.history-item .title {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: var(--text-color);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.history-item .meta {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+}
+
+.history-item .dormitory {
+  font-size: 24rpx;
+  color: #fff;
+  background: var(--secondary-color);
+  padding: 4rpx 15rpx;
+  border-radius: 30rpx;
+  align-self: flex-start;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.empty image {
+  width: 300rpx;
+  height: 300rpx;
+  opacity: 0.6;
+}
+
+.empty text {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: var(--text-secondary);
+}
+
+.loading-more, .no-more {
+  text-align: center;
+  padding: 30rpx;
+  font-size: 26rpx;
+  color: var(--text-secondary);
+}
+
+.loading-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-more text {
+  margin-top: 15rpx;
+}
