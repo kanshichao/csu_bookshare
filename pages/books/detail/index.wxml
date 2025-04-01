@@ -1,0 +1,89 @@
+<!-- pages/books/detail/index.wxml -->
+<view class="book-detail-container">
+  <loading wx:if="{{loading}}"></loading>
+  
+  <view wx:else class="book-detail">
+    <!-- 图书封面 -->
+    <view class="cover-section">
+      <image 
+        src="{{book.cover || '/assets/images/default-book.png'}}" 
+        mode="aspectFit"
+        class="cover"
+      ></image>
+      
+      <view class="actions">
+        <button 
+          wx:if="{{canBorrow}}"
+          class="borrow-btn"
+          bindtap="handleBorrow"
+        >借阅图书</button>
+        
+        <button 
+          wx:if="{{canReturn}}"
+          class="return-btn"
+          bindtap="handleReturn"
+        >归还图书</button>
+        
+        <button 
+          wx:if="{{isOwner}}"
+          class="edit-btn"
+          bindtap="navigateToAdd"
+        >编辑信息</button>
+      </view>
+    </view>
+    
+    <!-- 图书信息 -->
+    <view class="info-section">
+      <text class="title">{{book.title}}</text>
+      <text class="author">{{book.author}}</text>
+      
+      <view class="meta">
+        <text class="publisher">{{book.publisher}}</text>
+        <text class="isbn">ISBN: {{book.isbn || '未知'}}</text>
+      </view>
+      
+      <view class="divider"></view>
+      
+      <view class="category-tags">
+        <text class="tag main-category">{{book.main_category}}</text>
+        <text class="tag sub-category" wx:if="{{book.sub_category}}">{{book.sub_category}}</text>
+        <text class="tag zone" wx:if="{{book.special_zone}}">{{book.special_zone}}</text>
+      </view>
+      
+      <view class="divider"></view>
+      
+      <view class="detail-item">
+        <text class="label">所属寝室</text>
+        <text class="value">{{book.dormitory}}</text>
+      </view>
+      
+      <view class="detail-item">
+        <text class="label">当前状态</text>
+        <text class="value {{book.status === 'available' ? 'available' : 'borrowed'}}">
+          {{book.status === 'available' ? '可借阅' : '已借出'}}
+        </text>
+      </view>
+      
+      <view class="detail-item" wx:if="{{book.status === 'borrowed'}}">
+        <text class="label">借阅人</text>
+        <text class="value">{{book.borrower_name || '未知'}}</text>
+      </view>
+      
+      <view class="detail-item" wx:if="{{book.status === 'borrowed'}}">
+        <text class="label">借阅时间</text>
+        <text class="value">{{book.borrow_time}}</text>
+      </view>
+      
+      <view class="detail-item" wx:if="{{book.status === 'borrowed'}}">
+        <text class="label">应还时间</text>
+        <text class="value">{{book.due_time}}</text>
+      </view>
+    </view>
+    
+    <!-- 图书描述 -->
+    <view class="desc-section" wx:if="{{book.description}}">
+      <text class="section-title">图书简介</text>
+      <text class="description">{{book.description}}</text>
+    </view>
+  </view>
+</view>
