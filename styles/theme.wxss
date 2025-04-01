@@ -1,0 +1,13 @@
+/* styles/theme.wxss */
+:root {
+  --primary-color: #2d8cf0;
+  --primary-rgb: 45, 140, 240;
+  --secondary-color: #19be6b;
+  --secondary-rgb: 25, 190, 107;
+  --error-color: #ed3f14;
+  --warning-color: #ff9900;
+  --text-color: #333;
+  --text-secondary: #666;
+  --border-color: #e8eaec;
+  --background-color: #f8f8f9;
+}
