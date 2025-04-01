@@ -1,0 +1,7 @@
+<!-- components/loading/index.wxml -->
+<view class="loading">
+  <view 
+    class="spinner" 
+    style="width: {{size}}; height: {{size}}; border-color: {{color}} transparent transparent {{color}};"
+  ></view>
+</view>
