@@ -1,0 +1,50 @@
+<!-- pages/books/list/index.wxml -->
+<view class="book-list-container">
+  <!-- 搜索框 -->
+  <view class="search-bar">
+    <icon type="search" size="16" color="#999"></icon>
+    <input 
+      placeholder="搜索图书" 
+      confirm-type="search"
+      bindconfirm="onSearch"
+      value="{{searchValue}}"
+    />
+  </view>
+  
+  <!-- 分类导航 -->
+  <scroll-view scroll-x class="category-nav">
+    <block wx:for="{{categories}}" wx:key="value">
+      <view 
+        class="category-item {{activeCategory === item.value ? 'active' : ''}}"
+        bindtap="onCategoryChange"
+        data-value="{{item.value}}"
+      >
+        {{item.name}}
+      </view>
+    </block>
+  </scroll-view>
+  
+  <!-- 图书列表 -->
+  <scroll-view 
+    scroll-y 
+    class="book-list" 
+    refresher-enabled
+    refresher-triggered="{{refreshing}}"
+    bindrefresherrefresh="onRefresh"
+  >
+    <block wx:for="{{books}}" wx:key="_id">
+      <book-card 
+        book="{{item}}" 
+        bindtap="navigateToDetail" 
+        data-id="{{item._id}}"
+      />
+    </block>
+    
+    <view wx:if="{{books.length === 0 && !loading}}" class="empty">
+      <image src="/assets/images/empty-book.png" mode="aspectFit"></image>
+      <text>暂无图书数据</text>
+    </view>
+  </scroll-view>
+  
+  <loading wx:if="{{loading}}"></loading>
+</view>
