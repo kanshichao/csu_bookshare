@@ -4,7 +4,6 @@
   "description": "MySQL数据库连接云函数",
   "main": "index.js",
   "dependencies": {
-    "wx-server-sdk": "latest",
     "mysql2": "^2.3.3"
   }
 }
