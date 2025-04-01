@@ -1,0 +1,89 @@
+/* pages/profile/index/index.wxss */
+@import "../../styles/theme.wxss";
+
+.profile-container {
+  background: #f5f7fa;
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  padding: 40rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.user-card .avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+.user-card .info {
+  flex: 1;
+}
+
+.user-card .name {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 10rpx;
+}
+
+.user-card .dormitory {
+  font-size: 28rpx;
+  color: var(--text-secondary);
+}
+
+.stats {
+  display: flex;
+  background: #fff;
+  padding: 30rpx 0;
+  margin-bottom: 20rpx;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-item .value {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 10rpx;
+}
+
+.stat-item .label {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+}
+
+.menu-list {
+  background: #fff;
+  padding: 0 30rpx;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1rpx solid var(--border-color);
+  font-size: 30rpx;
+  color: var(--text-color);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
