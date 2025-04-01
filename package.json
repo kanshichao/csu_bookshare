@@ -8,32 +8,42 @@
     "dev": "cross-env NODE_ENV=development gulp",
     "build": "cross-env NODE_ENV=production gulp build",
     "lint": "eslint --ext .js,.wxml,.wxss ./csu_bookshare",
-    "fix": "eslint --fix --ext .js,.wxml,.wxss ./csu_bookshare"
+    "fix": "eslint --fix --ext .js,.wxml,.wxss ./csu_bookshare",
+    "upload": "miniprogram-ci upload",
+    "preview": "miniprogram-ci preview"
   },
   "keywords": [
     "wechat",
     "csu_bookshare",
     "book",
-    "management"
+    "manage"
   ],
   "author": "Your Name <your.email@example.com>",
   "license": "MIT",
+  "dependencies": {
+    "weui-miniprogram": "^1.2.3",
+    "dayjs": "^1.11.5",
+    "miniprogram-api-typings": "^3.6.0",
+    "miniprogram-computed": "^4.1.1",
+    "miniprogram-recycle-view": "^0.1.5",
+    "wechat-miniprogram-request": "^1.0.0"
+  },
   "devDependencies": {
     "cross-env": "^7.0.3",
     "eslint": "^8.11.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-wechat-csu_bookshare": "^1.1.1",
+    "eslint-plugin-wechat-miniprogram": "^1.1.1",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.3",
     "jest": "^27.5.1",
-    "csu_bookshare-ci": "^1.8.0",
-    "csu_bookshare-simulate": "^1.5.0",
+    "miniprogram-ci": "^1.8.0",
+    "miniprogram-simulate": "^1.5.0",
     "postcss": "^8.4.12",
     "postcss-pxtransform": "^3.8.0",
     "through2": "^4.0.2"
   },
-  "csu_bookshare": "csu_bookshare"
+  "miniprogram": "csu_bookshare"
 }
