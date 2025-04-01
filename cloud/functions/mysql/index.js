@@ -6,7 +6,6 @@ cloud.init()
 // 从环境变量获取数据库配置
 const {
   MYSQL_HOST,
-  MYSQL_PORT = 3306,
   MYSQL_USER,
   MYSQL_PASSWORD,
   MYSQL_DATABASE
