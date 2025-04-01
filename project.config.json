@@ -28,9 +28,9 @@
     ]
   },
   "compileType": "miniprogram",
-  "appid": "您的微信小程序AppID",
+  "appid": "wx7e787cfac1696517",
   "projectname": "寝室图书共享",
-  "miniprogramRoot": "miniprogram/",
+  "miniprogramRoot": "csu_bookshare/",
   "cloudfunctionRoot": "cloud/functions/",
   "libVersion": "2.19.4",
   "simulatorType": "wechat",
