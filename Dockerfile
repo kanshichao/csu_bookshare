@@ -35,28 +35,8 @@ ENV NODE_OPTIONS="--max-old-space-size=4096"
 # 复制应用代码
 COPY . .
 
-# 设置权限
-RUN chown -R node:node /app && \
-    chmod -R 755 /app
-
-# 生产镜像
-FROM node:16-alpine
-WORKDIR /app
-
-# 复制云函数
-COPY --from=builder /app/cloud/functions/mysql ./mysql
-
-# 安装云函数依赖
-RUN find ./mysql -name "package.json" -execdir npm install \;
-
-# 安装全局依赖
-RUN npm install -g serve
-
 # 暴露端口
 EXPOSE 80
-
-# 使用非root用户运行
-USER node
 
 # 启动命令
 CMD ["npm", "start"]
