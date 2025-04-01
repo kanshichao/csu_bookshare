@@ -1,0 +1,57 @@
+<!-- pages/auth/reset-password/index.wxml -->
+<view class="reset-container">
+  <view class="reset-header">
+    <text class="title">重置密码</text>
+    <text class="subtitle">请输入您的学号和验证码</text>
+  </view>
+  
+  <view class="reset-form">
+    <view class="form-item">
+      <text class="label">学号</text>
+      <input 
+        type="text" 
+        placeholder="请输入学号" 
+        data-field="studentId"
+        bindinput="handleInputChange"
+        value="{{studentId}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">验证码</text>
+      <view class="verify-code-input">
+        <input 
+          type="number" 
+          placeholder="请输入验证码" 
+          data-field="verifyCode"
+          bindinput="handleInputChange"
+          value="{{verifyCode}}"
+        />
+        <button 
+          class="send-btn" 
+          bindtap="sendVerifyCode"
+          disabled="{{countdown > 0}}"
+        >
+          {{countdown > 0 ? `${countdown}s后重试` : '获取验证码'}}
+        </button>
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <text class="label">新密码</text>
+      <input 
+        type="password" 
+        placeholder="请输入新密码" 
+        data-field="newPassword"
+        bindinput="handleInputChange"
+        value="{{newPassword}}"
+      />
+    </view>
+    
+    <button 
+      class="reset-btn" 
+      bindtap="handleReset"
+      loading="{{loading}}"
+    >重置密码</button>
+  </view>
+</view>
