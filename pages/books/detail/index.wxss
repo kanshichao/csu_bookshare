@@ -1,0 +1,169 @@
+/* pages/books/detail/index.wxss */
+@import "../../styles/theme.wxss";
+
+.book-detail-container {
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.book-detail {
+  padding-bottom: 40rpx;
+}
+
+.cover-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.cover {
+  width: 300rpx;
+  height: 420rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 40rpx;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.actions button {
+  flex: 1;
+  margin: 0 15rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  border-radius: 40rpx;
+}
+
+.borrow-btn {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.return-btn {
+  background: var(--error-color);
+  color: #fff;
+}
+
+.edit-btn {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.info-section {
+  background: #fff;
+  padding: 40rpx;
+  margin-bottom: 20rpx;
+  border-radius: 12rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.author {
+  display: block;
+  font-size: 30rpx;
+  color: var(--text-secondary);
+  margin-top: 15rpx;
+}
+
+.meta {
+  margin-top: 25rpx;
+}
+
+.publisher, .isbn {
+  display: block;
+  font-size: 28rpx;
+  color: var(--text-secondary);
+  margin-top: 8rpx;
+}
+
+.divider {
+  height: 1rpx;
+  background: #eee;
+  margin: 40rpx 0;
+}
+
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10rpx;
+}
+
+.tag {
+  padding: 10rpx 25rpx;
+  margin: 10rpx;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+}
+
+.main-category {
+  background: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary-color);
+}
+
+.sub-category {
+  background: rgba(var(--secondary-rgb), 0.1);
+  color: var(--secondary-color);
+}
+
+.zone {
+  background: rgba(156, 39, 176, 0.1);
+  color: #9c27b0;
+}
+
+.detail-item {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+
+.detail-item .label {
+  width: 150rpx;
+  font-size: 28rpx;
+  color: var(--text-secondary);
+}
+
+.detail-item .value {
+  flex: 1;
+  font-size: 28rpx;
+  color: var(--text-color);
+}
+
+.detail-item .available {
+  color: var(--success-color);
+}
+
+.detail-item .borrowed {
+  color: var(--error-color);
+}
+
+.desc-section {
+  background: #fff;
+  padding: 40rpx;
+  border-radius: 12rpx;
+}
+
+.section-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 25rpx;
+}
+
+.description {
+  font-size: 28rpx;
+  color: var(--text-color);
+  line-height: 1.6;
+}
