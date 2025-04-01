@@ -1,0 +1,76 @@
+/* pages/books/list/index.wxss */
+@import "../../styles/theme.wxss";
+
+.book-list-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7fa;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20rpx 30rpx;
+  margin: 20rpx;
+  border-radius: 50rpx;
+  box-shadow: 0 5rpx 15rpx rgba(0, 0, 0, 0.05);
+}
+
+.search-bar icon {
+  margin-right: 15rpx;
+}
+
+.search-bar input {
+  flex: 1;
+  font-size: 28rpx;
+  height: 60rpx;
+}
+
+.category-nav {
+  white-space: nowrap;
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+
+.category-item {
+  display: inline-block;
+  padding: 10rpx 30rpx;
+  margin-right: 20rpx;
+  font-size: 28rpx;
+  color: var(--text-secondary);
+  border-radius: 50rpx;
+  background: #f5f7fa;
+}
+
+.category-item.active {
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 500;
+}
+
+.book-list {
+  flex: 1;
+  padding: 20rpx;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.empty image {
+  width: 300rpx;
+  height: 300rpx;
+  opacity: 0.6;
+}
+
+.empty text {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: var(--text-secondary);
+}
