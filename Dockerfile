@@ -29,7 +29,7 @@ ENV MYSQL_DATABASE=book_manage
 ENV JWT_SECRET=your_jwt_secret_key_here
 
 # 暴露端口
-EXPOSE 3000
+EXPOSE 80
 
 # 启动命令
 CMD ["npm", "start"]
