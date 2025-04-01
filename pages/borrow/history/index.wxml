@@ -1,0 +1,48 @@
+<!-- pages/borrow/history/index.wxml -->
+<view class="history-container">
+  <view class="header">
+    <text class="title">借阅历史</text>
+    <text class="count">共{{historyList.length}}条记录</text>
+  </view>
+  
+  <scroll-view 
+    scroll-y 
+    class="history-list"
+    bindscrolltolower="onReachBottom"
+  >
+    <block wx:for="{{historyList}}" wx:key="_id">
+      <view 
+        class="history-item"
+        bindtap="navigateToDetail"
+        data-id="{{item.book_id}}"
+      >
+        <image 
+          src="{{item.book_cover || '/assets/images/default-book.png'}}" 
+          mode="aspectFill"
+          class="cover"
+        ></image>
+        
+        <view class="info">
+          <text class="title">{{item.book_title}}</text>
+          <text class="meta">借阅时间: {{item.borrow_time}}</text>
+          <text class="meta">归还时间: {{item.return_time}}</text>
+          <text class="dormitory">{{item.dormitory}}</text>
+        </view>
+      </view>
+    </block>
+    
+    <view wx:if="{{historyList.length === 0 && !loading}}" class="empty">
+      <image src="/assets/images/empty-history.png" mode="aspectFit"></image>
+      <text>暂无借阅历史</text>
+    </view>
+    
+    <view wx:if="{{loading && page > 1}}" class="loading-more">
+      <loading></loading>
+      <text>加载中...</text>
+    </view>
+    
+    <view wx:if="{{!hasMore && historyList.length > 0}}" class="no-more">
+      <text>没有更多了</text>
+    </view>
+  </scroll-view>
+</view>
