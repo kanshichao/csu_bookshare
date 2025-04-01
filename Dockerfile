@@ -45,7 +45,7 @@ ENV MYSQL_HOST=mysql
 ENV MYSQL_PORT=3306
 ENV MYSQL_USER=wxapp_user
 ENV MYSQL_PASSWORD=wxapp_password
-ENV MYSQL_DATABASE=book_management
+ENV MYSQL_DATABASE=book_manage
 ENV JWT_SECRET=your_jwt_secret_key_here
 
 # 暴露端口
