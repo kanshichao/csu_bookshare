@@ -39,14 +39,14 @@ COPY . .
 RUN chown -R node:node /app && \
     chmod -R 755 /app
 
-# 设置环境变量
-ENV NODE_ENV=production
-ENV MYSQL_HOST=mysql
-ENV MYSQL_PORT=3306
-ENV MYSQL_USER=wxapp_user
-ENV MYSQL_PASSWORD=wxapp_password
-ENV MYSQL_DATABASE=book_manage
-ENV JWT_SECRET=your_jwt_secret_key_here
+# 复制云函数
+COPY --from=builder /app/cloud/functions ./functions
+
+# 安装云函数依赖
+RUN find ./functions -name "package.json" -execdir npm install \;
+
+# 安装全局依赖
+RUN npm install -g serve
 
 # 暴露端口
 EXPOSE 80
