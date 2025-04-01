@@ -1,0 +1,43 @@
+<!-- pages/profile/change-password/index.wxml -->
+<view class="change-password-container">
+  <view class="form">
+    <view class="form-item">
+      <text class="label">原密码</text>
+      <input 
+        type="password" 
+        placeholder="请输入原密码" 
+        data-field="oldPassword"
+        bindinput="handleInputChange"
+        value="{{oldPassword}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">新密码</text>
+      <input 
+        type="password" 
+        placeholder="请输入新密码" 
+        data-field="newPassword"
+        bindinput="handleInputChange"
+        value="{{newPassword}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">确认密码</text>
+      <input 
+        type="password" 
+        placeholder="请再次输入新密码" 
+        data-field="confirmPassword"
+        bindinput="handleInputChange"
+        value="{{confirmPassword}}"
+      />
+    </view>
+    
+    <button 
+      class="submit-btn" 
+      bindtap="handleSubmit"
+      loading="{{loading}}"
+    >确认修改</button>
+  </view>
+</view>
