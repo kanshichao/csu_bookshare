@@ -39,8 +39,12 @@ COPY . .
 RUN chown -R node:node /app && \
     chmod -R 755 /app
 
+# 生产镜像
+FROM node:16-alpine
+WORKDIR /app
+
 # 复制云函数
-COPY --from=builder /app/cloud/functions/mysql ./mysql
+COPY --from=builder /app/cloud/functions ./mysql
 
 # 安装云函数依赖
 RUN find ./mysql -name "package.json" -execdir npm install \;
