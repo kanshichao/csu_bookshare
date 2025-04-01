@@ -1,0 +1,27 @@
+@import "./styles/common.wxss";
+@import "./styles/theme.wxss";
+@import "./assets/fonts/iconfont.wxss";
+
+/* 全局样式 */
+.container {
+  padding: 30rpx;
+}
+
+/* 页面过渡动画 */
+.page-enter {
+  opacity: 0;
+  transform: translateY(50rpx);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
