@@ -1,0 +1,83 @@
+/* pages/auth/reset-password/index.wxss */
+@import "../../styles/theme.wxss";
+
+.reset-container {
+  padding: 60rpx 50rpx;
+}
+
+.reset-header {
+  margin-bottom: 80rpx;
+}
+
+.reset-header .title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 15rpx;
+}
+
+.reset-header .subtitle {
+  font-size: 28rpx;
+  color: var(--text-secondary);
+}
+
+.reset-form .form-item {
+  margin-bottom: 50rpx;
+}
+
+.reset-form .label {
+  display: block;
+  font-size: 30rpx;
+  color: var(--text-color);
+  margin-bottom: 20rpx;
+  font-weight: 500;
+}
+
+.reset-form input {
+  width: 100%;
+  height: 90rpx;
+  background: #f5f7fa;
+  border-radius: 12rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  border: 1rpx solid #e1e5eb;
+}
+
+.verify-code-input {
+  display: flex;
+  align-items: center;
+}
+
+.verify-code-input input {
+  flex: 1;
+  margin-right: 20rpx;
+}
+
+.send-btn {
+  width: 220rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  color: var(--primary-color);
+  background: rgba(var(--primary-rgb), 0.1);
+  border-radius: 12rpx;
+  padding: 0;
+}
+
+.send-btn[disabled] {
+  color: var(--text-secondary);
+  background: #f5f5f5;
+}
+
+.reset-btn {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold;
+  border-radius: 12rpx;
+  margin-top: 80rpx;
+}
