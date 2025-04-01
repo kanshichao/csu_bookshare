@@ -18,9 +18,6 @@ RUN npm config set registry https://registry.npmmirror.com && \
     npm config set electron_mirror https://npmmirror.com/mirrors/electron/ && \
     npm config set puppeteer_download_host https://npmmirror.com/mirrors
 
-RUN npm install weui-csu_bookshare csu_bookshare-computed csu_bookshare-ci csu_bookshare-api-typing csu_bookshare-recycle-view wechat-csu_bookshare-request --save
-
-
 # 复制 package.json 和 package-lock.json
 COPY package*.json ./
 
