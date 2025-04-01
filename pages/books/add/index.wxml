@@ -1,0 +1,124 @@
+<!-- pages/books/add/index.wxml -->
+<view class="add-book-container">
+  <view class="form">
+    <view class="form-item">
+      <text class="label">ISBN</text>
+      <view class="input-with-action">
+        <input 
+          type="text" 
+          placeholder="请输入ISBN或扫码" 
+          data-field="isbn"
+          bindinput="handleInputChange"
+          value="{{form.isbn}}"
+        />
+        <button class="scan-btn" bindtap="handleScanIsbn">扫码</button>
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <text class="label">书名</text>
+      <input 
+        type="text" 
+        placeholder="请输入书名" 
+        data-field="title"
+        bindinput="handleInputChange"
+        value="{{form.title}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">作者</text>
+      <input 
+        type="text" 
+        placeholder="请输入作者" 
+        data-field="author"
+        bindinput="handleInputChange"
+        value="{{form.author}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">出版社</text>
+      <input 
+        type="text" 
+        placeholder="请输入出版社" 
+        data-field="publisher"
+        bindinput="handleInputChange"
+        value="{{form.publisher}}"
+      />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">主分类</text>
+      <picker 
+        mode="selector" 
+        range="{{categories}}" 
+        range-key="name"
+        bindchange="onMainCategoryChange"
+      >
+        <view class="picker">
+          {{form.mainCategory || '请选择主分类'}}
+        </view>
+      </picker>
+    </view>
+    
+    <view class="form-item" wx:if="{{subCategories.length > 0}}">
+      <text class="label">子分类</text>
+      <picker 
+        mode="selector" 
+        range="{{subCategories}}" 
+        bindchange="onSubCategoryChange"
+      >
+        <view class="picker">
+          {{form.subCategory || '请选择子分类'}}
+        </view>
+      </picker>
+    </view>
+    
+    <view class="form-item">
+      <text class="label">特色专区</text>
+      <picker 
+        mode="selector" 
+        range="{{zones}}" 
+        bindchange="onZoneChange"
+      >
+        <view class="picker">
+          {{form.specialZone || '请选择特色专区'}}
+        </view>
+      </picker>
+    </view>
+    
+    <view class="form-item">
+      <text class="label">图书封面</text>
+      <view class="cover-uploader" bindtap="handleChooseCover">
+        <image 
+          wx:if="{{coverUrl}}" 
+          src="{{coverUrl}}" 
+          mode="aspectFill"
+          class="cover-image"
+        ></image>
+        <view wx:else class="uploader-placeholder">
+          <icon type="camera" size="40" color="#ccc"></icon>
+          <text>点击上传封面</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <text class="label">图书简介</text>
+      <textarea 
+        placeholder="请输入图书简介" 
+        data-field="description"
+        bindinput="handleInputChange"
+        value="{{form.description}}"
+        class="textarea"
+      ></textarea>
+    </view>
+    
+    <button 
+      class="submit-btn" 
+      bindtap="handleSubmit"
+      loading="{{loading}}"
+    >提交</button>
+  </view>
+</view>
