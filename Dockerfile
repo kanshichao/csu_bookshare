@@ -19,8 +19,6 @@ RUN npm config set registry https://registry.npmmirror.com && \
     npm config set puppeteer_download_host https://npmmirror.com/mirrors
 
 # 复制 package.json 和 package-lock.json
-COPY app*.json ./
-
 COPY package*.json ./
 
 # 安装系统依赖（如有需要）
